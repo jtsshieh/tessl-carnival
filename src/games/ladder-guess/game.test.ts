@@ -33,6 +33,13 @@ describe('ladder guess', () => {
     }
   });
 
+  it('never names the answer in its hint', () => {
+    for (const question of QUESTIONS.flat()) {
+      const words = question.hint.toLowerCase().split(/[^a-z#+]+/);
+      expect(words).not.toContain(question.answer.toLowerCase());
+    }
+  });
+
   it('moves one rung along for a right guess', () => {
     const state = createState(first);
     expect(guess(state, currentQuestion(state)!.answer)).toBe(true);

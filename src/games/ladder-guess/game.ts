@@ -11,126 +11,126 @@ export interface Question {
 }
 
 /**
- * Two questions for each rung, easiest first. A round asks one question from
+ * Two trivia questions for each rung, easiest first. A round asks one question from
  * each rung, so the hints get harder the further you cross.
  */
 export const QUESTIONS: readonly (readonly Question[])[] = [
   [
     {
-      hint: 'console.log("Hello, world!")',
+      hint: 'Brendan Eich wrote it in 10 days in 1995 for Netscape.',
       choices: ['JavaScript', 'Python', 'C', 'Ruby'],
       answer: 'JavaScript',
     },
     {
-      hint: 'print("Hello, world!")  # no semicolons, indentation matters',
+      hint: 'Guido van Rossum named it after a BBC comedy troupe.',
       choices: ['Python', 'Java', 'PHP', 'C#'],
       answer: 'Python',
     },
   ],
   [
     {
-      hint: 'public static void main(String[] args)',
+      hint: '"Write once, run anywhere", first called Oak.',
       choices: ['Java', 'C', 'Go', 'Kotlin'],
       answer: 'Java',
     },
     {
-      hint: '<?php echo "Hi"; ?>',
+      hint: 'Its name once stood for "Personal Home Page".',
       choices: ['PHP', 'Perl', 'Ruby', 'JavaScript'],
       answer: 'PHP',
     },
   ],
   [
     {
-      hint: '#include <stdio.h> and printf("%d\\n", x);',
+      hint: 'Dennis Ritchie made it at Bell Labs to write Unix.',
       choices: ['C', 'Rust', 'Swift', 'Python'],
       answer: 'C',
     },
     {
-      hint: 'SELECT name FROM users WHERE age > 21;',
+      hint: 'Born at IBM in the 1970s as SEQUEL, for querying data.',
       choices: ['SQL', 'Haskell', 'Lua', 'R'],
       answer: 'SQL',
     },
   ],
   [
     {
-      hint: 'puts "Hi" and blocks like 3.times do ... end',
+      hint: 'Matz made it in Japan to make programmers happy.',
       choices: ['Ruby', 'Python', 'Elixir', 'Lua'],
       answer: 'Ruby',
     },
     {
-      hint: 'let x: number = 5; interface User { name: string }',
+      hint: 'Microsoft added static types to JavaScript in 2012.',
       choices: ['TypeScript', 'JavaScript', 'Dart', 'Java'],
       answer: 'TypeScript',
     },
   ],
   [
     {
-      hint: 'func main() { fmt.Println("Hi") }',
+      hint: 'Designed at Google; its mascot is a gopher.',
       choices: ['Go', 'Swift', 'Rust', 'Kotlin'],
       answer: 'Go',
     },
     {
-      hint: 'using System; Console.WriteLine("Hi");',
+      hint: 'Anders Hejlsberg led it at Microsoft for .NET.',
       choices: ['C#', 'Java', 'F#', 'C++'],
       answer: 'C#',
     },
   ],
   [
     {
-      hint: 'fn main() { let mut v = Vec::new(); }',
+      hint: 'Its mascot is Ferris the crab; Mozilla backed it early.',
       choices: ['Rust', 'Go', 'C++', 'Zig'],
       answer: 'Rust',
     },
     {
-      hint: 'guard let name = user?.name else { return }',
+      hint: 'Apple unveiled it in 2014 as a successor to Objective-C.',
       choices: ['Swift', 'Kotlin', 'Rust', 'Scala'],
       answer: 'Swift',
     },
   ],
   [
     {
-      hint: 'fun main() { val x = listOf(1, 2) }',
+      hint: 'JetBrains named it after an island near St. Petersburg.',
       choices: ['Kotlin', 'Scala', 'Swift', 'Groovy'],
       answer: 'Kotlin',
     },
     {
-      hint: 'local t = {} for i = 1, 10 do t[i] = i end',
+      hint: 'Its name is Portuguese for "moon"; made in Brazil.',
       choices: ['Lua', 'Ruby', 'Julia', 'Perl'],
       answer: 'Lua',
     },
   ],
   [
     {
-      hint: 'main = putStrLn "Hi" and map (+1) [1..10]',
+      hint: 'A lazy, pure language named after logician Curry.',
       choices: ['Haskell', 'OCaml', 'Elm', 'F#'],
       answer: 'Haskell',
     },
     {
-      hint: 'defmodule Hi do def greet, do: IO.puts("Hi") end',
+      hint: 'José Valim built it to run on the Erlang VM.',
       choices: ['Elixir', 'Erlang', 'Ruby', 'Clojure'],
       answer: 'Elixir',
     },
   ],
   [
     {
-      hint: '(defn greet [name] (str "Hi " name))',
+      hint: "Rich Hickey's Lisp for the Java Virtual Machine.",
       choices: ['Clojure', 'Common Lisp', 'Scheme', 'Racket'],
       answer: 'Clojure',
     },
     {
-      hint: 'my @list = (1, 2, 3); print "$_\\n" foreach @list;',
+      hint: 'Larry Wall\'s "Swiss Army chainsaw"; its symbol is a camel.',
       choices: ['Perl', 'PHP', 'Ruby', 'Bash'],
       answer: 'Perl',
     },
   ],
   [
     {
-      hint: 'IDENTIFICATION DIVISION. PROGRAM-ID. HELLO.',
+      hint: 'Grace Hopper helped shape it; banks still run it.',
       choices: ['COBOL', 'Fortran', 'Ada', 'Pascal'],
       answer: 'COBOL',
     },
     {
-      hint: '+[----->+++<]>+.  (just eight symbols)',
+      hint: "Urban Müller's 1993 language has only eight commands.",
       choices: ['Brainfuck', 'APL', 'Befunge', 'Forth'],
       answer: 'Brainfuck',
     },
@@ -233,7 +233,7 @@ function draw(ctx: CanvasRenderingContext2D, state: LadderGuessState) {
     ctx.textAlign = 'center';
     ctx.fillStyle = colors.muted;
     ctx.font = canvasFont('small');
-    ctx.fillText('Which language is this?', WIDTH / 2, 220);
+    ctx.fillText('Which language is this about?', WIDTH / 2, 220);
     ctx.fillStyle = colors.text;
     ctx.font = canvasFont('body', 'bold');
     ctx.fillText(question.hint, WIDTH / 2, 255, WIDTH - 40);
