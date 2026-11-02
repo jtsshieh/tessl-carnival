@@ -1,11 +1,12 @@
 # Ladder Guess
 
 Cross a wobbly ladder that is held only by a post at each end. Every rung asks
-you to name a programming language from a hint.
+you to name a programming language from a piece of trivia about it.
 
 ## How to play
 
-- Each rung shows a hint, such as a line of code, and four languages to choose from.
+- Each rung shows a trivia hint, such as who made the language or where its name
+  comes from, and four languages to choose from.
 - Click a choice, or press `1` to `4`, to guess.
 - A right guess moves you one rung along. A wrong guess and you fall off.
 - The hints get harder the further you go. Cross all 10 rungs to win.
